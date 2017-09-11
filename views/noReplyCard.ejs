@@ -1,0 +1,11 @@
+<!-- 无人回复的栏 -->
+<div style="background-color: #fff">
+  <div class="page-header" style="margin: 0;padding: .2em">
+      <h5 style="font-weight: bold;padding: 0 .7em">无人回复的话题:</h5>
+  </div>
+  <div class="list-group" >
+  	<% noReplyTopics.forEach(function(topic){ %>
+      <a href="/topic/<%= topic._id%>" class="list-group-item"><%= topic.title %></a>
+    <% }) %>
+  </div>
+</div>

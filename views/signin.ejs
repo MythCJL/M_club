@@ -1,0 +1,57 @@
+<% include header %>
+<% include nav %>
+<!-- 主页内容 -->
+<div id="signin-main">
+  <div class="container" >
+    <div class="row">
+      <div class="col-sm-8 sign-col">
+        <ol class="breadcrumb">
+          <li><a href="/">主页</a></li>
+          <li class="active">登录</li>
+        </ol>
+        <!-- 注册表单 -->
+        <form class="form-horizontal" method="post">
+           <% if(error){ %>
+            <p class="text-danger" style="text-align: center;"><%= error %></p>
+          <% } %>
+          <% if(success){ %>
+            <p class="text-success" style="text-align: center;"><%= success %></p>
+          <% } %>
+            <div class="form-group">
+                <label for="nickname" class="col-sm-3 control-label">昵称
+                </label>
+                <div class="col-sm-6">
+                <input type="text" class="form-control" placeholder="昵称" 
+                 id="nickname" name="name" required>
+                </div>   
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">密码
+                </label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" placeholder="密码" 
+                    id="password" name="password" required>
+                </div>
+            </div>
+            <div class="form-group sign-form">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-primary">登录</button>
+                     <a href="/signup" class="sign-a">注册一个新账号</a>
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="col-sm-4 hidden-xs" >
+         <div class="well well-sm">
+            <p>在这里你可以:</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include footer %>

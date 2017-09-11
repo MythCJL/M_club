@@ -1,0 +1,43 @@
+@charset "utf-8";
+body {
+	background-color: #e1e1e1
+}
+.media:hover {
+	background-color: #eee
+}
+.sign-col {
+	background-color: #fff;
+	padding: 0
+}
+.sign-form {
+	margin-top: 2em
+}
+.sign-a {
+	display: inline-block; 
+	margin-left: 1em
+}
+.media {
+	border-bottom-color: #eee;
+    border-bottom-style: solid;
+}
+.media-img {
+	padding:0.5em
+}
+.media-h5 {
+	margin: 0.4em;
+	font-size:1.2em
+}
+.media-p {
+	font-size: 0.7em
+}
+.list-media {
+	border-bottom-color: rgba(238, 238, 238, 0.42);
+	border-bottom-style: solid;
+	margin-top: 0
+}
+.list-nav {
+	background-color: #eee
+}
+.list-group-item {
+	border: none
+}

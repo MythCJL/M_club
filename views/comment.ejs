@@ -1,0 +1,15 @@
+<!-- 评论区 -->
+<div class="page-header" style="margin: 0">
+  <h5><%= topic.comment %>条评论</h5>
+</div>
+<% comments.forEach( function (comment){ %>
+<div class="media" style="border-bottom-color: rgba(238, 238, 238, 0.42);border-bottom-style: solid;margin-top: 0">
+    <div class="media-left media-top" style="padding:0.5em">
+      <a href="#"><img class="media-object" src="http://www.gravatar.com/avatar/<%= comment.user.email %>?s=30"></a>
+    </div>
+    <div class="media-body">
+      <h5><a href="#" style="font-weight: bolder;color: #333;text-decoration: none"><%= comment.user.name %></a></h5>
+      <p><%= comment.content %></p>
+    </div>
+</div>
+<% }) %>

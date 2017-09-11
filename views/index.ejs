@@ -1,0 +1,28 @@
+<% include header %>
+<% include nav %>
+
+<!-- 主页内容 -->
+<div id="content-main">
+  <div class="container">
+	<div class="row">
+	  <div class="col-sm-8" style="background-color: #fff;padding: 0">
+	    <% include tab %>
+	    <% include list %>
+	    <% include pagination %>
+	  </div>
+	  <% if(user){ %>
+	  <div class="col-sm-4 hidden-xs">
+	  	<% include userCard %>
+	  </div>
+	  <% } %>
+	  <div class="<%= (topics.length<=1)&&(p==1)&&(user) ? 'col-sm-offset-8' : '' %> col-sm-4 hidden-xs">
+	  	<% include createCard %>
+	  </div>
+	  <div class="<%= ((topics.length < 3) && user) || (!user && topics.length==0) ? 'col-sm-offset-8' : '' %> col-sm-4 hidden-xs" >
+	  	<% include noReplyCard %>
+	  </div>
+	</div>
+  </div>	
+</div>
+<%= error %>
+<% include footer %>

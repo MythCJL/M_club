@@ -1,0 +1,15 @@
+<!-- 登录或发表栏-->
+<div style="background-color: #fff;margin: .7em 0">
+  <div class="page-header" style="margin: 0;padding: .2em">
+      <h5 style="font-weight: bold;padding: 0 .7em">js中文社区</h5>
+  </div>
+  <% if(user){ %>
+  <p style="padding: .5em">
+  	<a href="/create" class="btn btn-info">发布话题</a>
+  </p>
+  <% }else{ %>
+  <p style="padding: .5em">
+  你可以通过<a href="/signup">注册</a>或<a href="/signin">登录</a>发布帖子或留言
+  </p>
+  <% } %>
+</div>

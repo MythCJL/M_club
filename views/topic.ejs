@@ -1,0 +1,34 @@
+<% include header %>
+<% include nav%>
+
+<div id="topic-main">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8" style="background-color: #fff;padding: 0">
+        
+        <div class="page-header" style="margin: 0">
+            <h4 style="font-weight: bolder"><span class="label label-primary" style="margin: 0 .5em"><%= topic.tab %></span><%= topic.title %></h4>
+            <p style="margin: 0 0 .7em .7em"><%= topic.user.name %>发起话题 • <%= topic.pv %>次浏览 • <%= topic.comment %>个回复 • <%= topic.created_at %></p>
+        </div>
+        <p style="padding: 1em"><%= topic.content %></p>
+    </div>
+
+    <% if(user){ %>
+    <div class="col-sm-4 hidden-xs">
+      <% include userCard %>
+    </div>
+    <% } %>
+
+    <div class="col-sm-8" id="comment-main" style="background-color: #fff;margin: 1em 0 0">
+      <% include comment %>      
+    </div>
+
+    <div class="col-sm-8" id="reply-main" style="background-color: #fff;margin: 1em 0 0">
+      <% include reply %>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<% include footer %>

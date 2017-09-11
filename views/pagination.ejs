@@ -1,0 +1,22 @@
+<!-- 分页 -->
+<div class="page">
+<nav aria-label='Page navigation'>
+	<ul class="pagination" style="padding-left: 1em">
+    <% if(p && p > 1){ %>
+		<li>
+		  <a href="<%= topicsCount.prePage %>" arial-label='Previous'>
+		   <span arial-hidden='true'>&laquo;</span>
+		  </a>
+		</li>
+    <% } %>
+   
+	<% if(p && p < topicsCount.pages){ %>
+		<li>
+			<a href="<%= topicsCount.nextPage %>" arial-label='Next'>
+			  <span aria-hidden='true'>&raquo;</span>
+			</a>
+		</li>
+    <% } %>
+	</ul>
+</nav>
+</div>

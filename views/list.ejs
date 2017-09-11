@@ -1,0 +1,17 @@
+<!-- 帖子列表 -->
+<% topics.forEach(function (topic){	%>
+<div class="media list-media">
+	<div class="media-left media-middle media-img">
+	    <a href="#"><img class="media-object" src="http://www.gravatar.com/avatar/<%= topic.user.email %>?s=40" alt=""></a>
+	</div>
+	<div class="media-body">
+	    <h5 class="media-h5"><a href="/topic/<%= topic._id %>"><%= topic.title %></a></h5>
+	    <p class="media-p"><a href="/user/<%= topic.user.name %>"><%= topic.user.name %></a>发起话题 • <%= topic.pv %>次浏览 • <%= topic.comment %>个回复 • <%= topic.updated_at %> • <%= topic.tab %>
+	    <% if(!topicsCount.prePage.includes('tab')&&(user.name === topic.user.name)) { %>
+				<a href="/user/<%= user.name %>/<%= topic._id %>/remove" class="btn btn-info" >删除</a>
+				<a href="/edit/<%= topic._id %>" class="btn btn-info" >编辑</a>
+			<% } %>
+	    </p>
+	</div>
+</div>
+<% }) %>

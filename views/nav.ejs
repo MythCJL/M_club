@@ -1,0 +1,24 @@
+<!-- 导航栏 -->
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-col">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="nav-col">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">主页</a></li>
+                <li><a href="#">关于</a></li>
+                <% if(user){ %>
+                <li><a href="/logout">登出</a></li>
+                <% }else{ %>
+                <li><a href="/signup">注册</a></li>
+                <li><a href="/signin">登录</a></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

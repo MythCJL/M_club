@@ -1,0 +1,7 @@
+<!-- 帖子tab -->
+<ul class="nav nav-pills list-nav">
+    <li class="<%= (!tab || tab == community.tabs[0]) ? 'active' : '' %>"><a href="/"><%= community.tabs[0] %></a></li>
+   <% community.tabs.slice(1).forEach(function (ctab) { %>
+   <li class="<%= tab == ctab ? 'active' : '' %>"><a href="/?tab=<%= ctab %>"><%= ctab %></a></li>
+   <% }) %>
+</ul>
