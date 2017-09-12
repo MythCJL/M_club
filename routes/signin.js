@@ -1,6 +1,6 @@
-var express = require('express'),
-    router = express.Router(),
-    crypto = require('crypto');
+var express = require('express');
+var router = express.Router();
+var crypto = require('crypto');
 
 var Models = require('../lib/core');
 var $User = Models.$User;
