@@ -28,30 +28,30 @@ app.use('/topic', express.static(path.join(__dirname, 'public')));
 app.use('/user', express.static(path.join(__dirname, 'public')));
 app.use('/edit', express.static(path.join(__dirname, 'public')));
 app.use(session({
-	name: config.session.key,
-	secret: config.session.secret,
-	resave: true,
-	saveUninitialized: false,
-	cookie: {
-		maxAge: config.session.maxAge
-	},
-	store: new MongoStore({
-		url: config.mongodb.url
-	})
+  name: config.session.key,
+  secret: config.session.secret,
+  resave: true,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: config.session.maxAge
+  },
+  store: new MongoStore({
+    url: config.mongodb.url
+  })
 }));
 app.use(flash());
 
 //设置模板全局变量
 app.locals.community = {
-	title: 'js社区',
-	tabs: ['全部','分享','问答','公告']
+  title: 'js社区',
+  tabs: ['全部','分享','问答','公告']
 }
 //模板必须的三个变量
 app.use(function (req, res, next) {
-	res.locals.user = req.session.user;
-	res.locals.success = req.flash('success').toString();
-	res.locals.error = req.flash('error').toString();
-	next();
+  res.locals.user = req.session.user;
+  res.locals.success = req.flash('success').toString();
+  res.locals.error = req.flash('error').toString();
+  next();
 });
 
 //路由
